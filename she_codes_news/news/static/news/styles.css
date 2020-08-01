@@ -84,3 +84,16 @@
     margin: 0 0 10px 10px;
     width: 50%;
 }
+
+form {
+    border: 2px solid rgb(37, 8, 64);
+    background-color: rgb(231, 231, 112);
+    font-size: 25px;
+}
+
+form label{
+    color: blueviolet;
+    font-style: italic
+
+    
+}
