@@ -27,3 +27,11 @@ class AddStoryView(generic.CreateView):
     context_object_name = 'storyForm'
     template_name = 'news/createStory.html'
     success_url = reverse_lazy('news:index')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+        # 'pub_date': forms.DateInput(format=('%m/%d/%Y'),
+        # attrs={'class':'form-control', 'placeholder':'Select a date','type':'date'}),
+
