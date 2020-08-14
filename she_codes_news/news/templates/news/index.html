@@ -9,8 +9,11 @@
 
 
 {% block content %}
-
-    <a href="{% url 'news:newStory' %}">Write New Story</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'news:newStory' %}">Write New Story</a>
+    {% else %}
+        <p></p>
+    {% endif %}
    <h2>Latest News</h2>
 
     <div id="latest-stories">

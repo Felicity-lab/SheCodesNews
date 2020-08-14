@@ -9,8 +9,14 @@
     <h2>{{ story.title }}</h2>
     <!-- <h4>{{ story.author }}</h4> -->
     <a href="{% url 'users:profile' story.author.id %}">{{ story.author }}</a>
+
     <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
+        {% if not story.image %} 
+            <!-- <img src="{% static '/news/images/placeholder-5.jpg' %}"> -->
+            <img src="https://picsum.photos/600">
+        {% else %}
+            <img src="{{ story.image }}">
+        {% endif %}    
         {{ story.content|linebreaks }}
     </div>
 </div>
